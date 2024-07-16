@@ -1,0 +1,21 @@
+interface Animal{
+    void soundanimal();
+    void sleep();
+}
+
+class pig implements Animal{
+    public void soundanimal(){
+        System.out.println("wee wee");
+    }
+    public void sleep(){
+        System.out.println("Zzz");
+    }
+}
+
+public class main{
+    public static void main(String [] args){
+        pig mypig = new pig();
+        mypig.soundanimal();
+        mypig.sleep();
+    }
+}
