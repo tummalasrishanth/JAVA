@@ -1,0 +1,22 @@
+interface CheckEvenOdd {
+    boolean isEven(int number);
+}
+
+class EvenOddChecker implements CheckEvenOdd {
+    public boolean isEven(int number) {
+        return number % 2 == 0;
+    }
+}
+
+public class EvenOddProgram {
+    public static void main(String[] args) {
+        CheckEvenOdd checker = new EvenOddChecker();
+
+        int num = 7;
+        if (checker.isEven(num)) {
+            System.out.println(num + " is even.");
+        } else {
+            System.out.println(num + " is odd.");
+        }
+    }
+}
