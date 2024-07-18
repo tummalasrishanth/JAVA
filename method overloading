@@ -1,0 +1,50 @@
+1. class Animal {
+    public void sound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+  class Dog extends Animal {
+    public void sound() {
+        System.out.println("Dog barks");
+    }
+}
+public class MethodOverridingExample {
+    public static void main(String[] args) {
+        Animal animal = new Dog();
+        animal.sound(); 
+    }
+}
+
+2. public class MethodOverloadingExample {
+    public static void printMessage(String message) {
+        System.out.println("String message: " + message);
+    }
+    public static void printMessage(int messageId) {
+        System.out.println("Int message: " + messageId);
+    }
+    public static void main(String[] args) {
+        printMessage("srishanth"); 
+        printMessage(1424); 
+    }
+}
+
+3. public class Calculator {
+    public int add(int a, int b) {
+        return a + b;
+    }
+
+    public double add(double a, double b) {
+        return a + b;
+    }
+
+    public int add(int a, int b, int c) {
+        return a + b + c;
+    }
+
+    public static void main(String[] args) {
+        Calculator calc = new Calculator();
+        System.out.println(calc.add(2, 3)); 
+        System.out.println(calc.add(2.5, 3.5)); 
+        System.out.println(calc.add(2, 3, 4)); 
+    }
+}
