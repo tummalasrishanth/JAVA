@@ -1,0 +1,16 @@
+1. public class TryCatchExample {
+  public static void main(String[] args) {
+    try {
+      int x = 5 / 0; 
+      System.out.println("Result: " + x);
+    } catch (ArithmeticException e) {
+      System.out.println("Error: Cannot divide by zero!");
+      System.out.println("Exception message: " + e.getMessage());
+    } catch (Exception e) {
+      System.out.println("Error: An unexpected error occurred.");
+      System.out.println("Exception message: " + e.getMessage());
+    } finally {
+      System.out.println("Finally block executed.");
+    }
+  }
+}
