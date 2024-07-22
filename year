@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the day: ");
+        int day = scanner.nextInt();
+        System.out.print("Enter the month: ");
+        int month = scanner.nextInt();
+        System.out.print("Enter the year: ");
+        int year = scanner.nextInt();
+
+        String dayOfWeek = findDay(day, month, year);
+        System.out.println("Day of the week: " + dayOfWeek);
+    }
+
+    public static String findDay(int day, int month, int year) {
+        String[] days = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
+        int t = day;
+        int m = month;
+        int y = year;
+
+        if (m < 3) {
+            m += 12;
+            y -= 1;
+        }
+
+        int q = t;
+        int K = y % 100;
+        int J = y / 100;
+
+        int f = q + ((13 * (m + 1)) / 5) + K + (K / 4) + (J / 4) - (2 * J);
+        int dayOfWeek = f % 7;
+
+        return days[dayOfWeek];
+    }
+}
