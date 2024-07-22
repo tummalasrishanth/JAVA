@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class FactorPrinter {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        int num = scanner.nextInt();
+
+        int factorCount = 0;
+        int[] factors = new int[num];
+
+        for (int i = 1; i <= num; i++) {
+            if (num % i == 0) {
+                factors[factorCount++] = i;
+            }
+        }
+
+        System.out.println("Number of factors: " + factorCount);
+
+        System.out.print("Enter the position of the factor to print (1-" + factorCount + "): ");
+        int nthFactorPosition = scanner.nextInt();
+
+        if (nthFactorPosition >= 1 && nthFactorPosition <= factorCount) {
+            System.out.println("The " + nthFactorPosition + "th factor is: " + factors[nthFactorPosition - 1]);
+        } else {
+            System.out.println("Invalid position");
+        }
+    }
+}
